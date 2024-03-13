@@ -1,0 +1,31 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+## POST /admin/artist
+
+Create one new artist.
+
+### Request
+
+#### Body
+
+- `name` (string, required): The name of the track.
+- `file` (file, required): The cover image of the artist.
+
+### Response
+
+<Tabs>
+  <TabItem value="200" label="200" default>
+    Artist created successfully.
+  </TabItem>
+  <TabItem value="401" label="401">
+    Bad or expired token. The user needs to be authenticated and have permission
+    to add artist.
+  </TabItem>
+  <TabItem value="422" label="422">
+    The request body is missing or has invalid fields.
+  </TabItem>
+  <TabItem value="429" label="429">
+    The user has sent too many requests in a given amount of time.
+  </TabItem>
+</Tabs>
