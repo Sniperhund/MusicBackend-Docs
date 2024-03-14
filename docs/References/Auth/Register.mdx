@@ -12,3 +12,14 @@ Register a user
 -   `email` (string, required): The email of the user
 -   `password` (string, required): The password of the user
 -   `name` (string, required): The name of the user
+-   `frontendUrl` (string, required): The frontend url of the verify page
+
+:::danger
+
+The user will receive an email to verify the account
+
+In the email a link goes to `frontendUrl`?q=token
+
+Where you have to call the `GET /auth/verify` endpoint with the verify token in the q parameter
+
+:::

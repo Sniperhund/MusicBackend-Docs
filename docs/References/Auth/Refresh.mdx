@@ -1,0 +1,38 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+## POST /auth/refresh
+
+Refresh a user's access token
+
+### Request
+
+#### Body
+
+-   `refreshToken` (string, required): The refresh token of the user
+
+### Response
+
+<Tabs>
+    <TabItem value="200" label="200" default>
+        New access token successfully generated
+
+        ```js
+        {
+            "status": "ok",
+            "accessToken": "a1814d8e-e5e1-49c1-9bd3-201adf477f34"
+        }
+        ```
+        </TabItem>
+        <TabItem value="404" label="404">
+        The refresh token is invalid
+
+        ```js
+        {
+            "status": "error",
+            "message": "The refresh token is invalid"
+        }
+        ```
+        </TabItem>
+
+</Tabs>

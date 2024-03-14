@@ -1,0 +1,29 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+## POST /auth/verify
+
+Verify a user
+
+### Request
+
+#### Query Parameters
+
+-   `q` (string, required) - The verify token
+
+### Response
+
+<Tabs>
+  	<TabItem value="200" label="200" default>
+    Verify successful
+
+    ```js
+    {
+        "status": "ok",
+        "accessToken": "a1814d8e-e5e1-49c1-9bd3-201adf477f34",
+        "refreshToken": "a1814d8e-e5e1-49c1-9bd3-201adf477f34",
+    }
+    ```
+    </TabItem>
+
+</Tabs>

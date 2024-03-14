@@ -1,0 +1,38 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+## POST /auth/login
+
+Login a user
+
+### Request
+
+#### Body
+
+-   `email` (string, required): The email of the user
+-   `password` (string, required): The password of the user
+
+<Tabs>
+  	<TabItem value="200" label="200" default>
+    Login successful
+
+    ```js
+    {
+        "status": "ok",
+        "accessToken": "a1814d8e-e5e1-49c1-9bd3-201adf477f34",
+        "refreshToken": "a1814d8e-e5e1-49c1-9bd3-201adf477f34",
+    }
+    ```
+    </TabItem>
+    <TabItem value="400" label="400">
+    Bad request
+
+    ```js
+    {
+        "status": "error",
+        "message": "Invalid email or password"
+    }
+    ```
+    </TabItem>
+
+</Tabs>
