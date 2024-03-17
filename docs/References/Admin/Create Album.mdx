@@ -5,28 +5,34 @@ import TabItem from "@theme/TabItem";
 
 Create Album.
 
+:::info
+
+You have to attach a access token in the Authorization in the header and have the admin role to access this endpoint.
+
+:::
+
 ### Request
 
 #### Body
 
-- `name` (string, required): The name of the album.
-- `artist` (mongodb id, required): The artist that the album belongs to.
-- `file` (file, required): The album cover image file.
+-   `name` (string, required): The name of the album.
+-   `artist` (mongodb id, required): The artist that the album belongs to.
+-   `file` (file, required): The album cover image file.
 
 ### Response
 
 <Tabs>
-  <TabItem value="200" label="200" default>
-    Album created successfully.
-  </TabItem>
-  <TabItem value="401" label="401">
-    Bad or expired token. The user needs to be authenticated and have permission
-    to add albums.
-  </TabItem>
-  <TabItem value="422" label="422">
-    The request body is missing or has invalid fields.
-  </TabItem>
-  <TabItem value="429" label="429">
-    The user has sent too many requests in a given amount of time.
-  </TabItem>
+    <TabItem value="200" label="200" default>
+        Album created successfully.
+    </TabItem>
+    <TabItem value="401" label="401">
+        Bad or expired token. The user needs to be authenticated and have
+        permission to add albums.
+    </TabItem>
+    <TabItem value="422" label="422">
+        The request body is missing or has invalid fields.
+    </TabItem>
+    <TabItem value="429" label="429">
+        The user has sent too many requests in a given amount of time.
+    </TabItem>
 </Tabs>

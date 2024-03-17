@@ -1,0 +1,43 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+## PUT /user/tracks
+
+Save one or more tracks to the user's saved tracks.
+
+:::info
+
+You have to attach a access token in the Authorization in the header
+
+:::
+
+### Request
+
+#### Body
+
+-   `ids` (array of mongodb ids) - The ids of the tracks to be saved.
+
+### Response
+
+<Tabs>
+  	<TabItem value="200" label="200" default>
+        The tracks were saved successfully.
+
+        ```js
+        {
+            "status": "ok",
+        }
+        ```
+    </TabItem>
+    <TabItem value="400" label="400">
+        The user was not found.
+
+        ```js
+        {
+            "status": "error",
+            "message": "The user was not found"
+        }
+        ```
+    </TabItem>
+
+</Tabs>

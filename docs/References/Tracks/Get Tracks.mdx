@@ -5,11 +5,19 @@ import TabItem from "@theme/TabItem";
 
 Get multiple track by its ID.
 
+:::info
+
+You have to attach a access token in the Authorization in the header
+
+:::
+
 ### Request
 
 #### Query Parameters
 
 -   `ids` (array of strings, required) - The IDs of the tracks.
+-   `limit` (number) - The maximum number of tracks to return. Default is 10.
+-   `offset` (number) - The number of tracks to skip. Default is 0.
 
 ### Response
 

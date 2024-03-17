@@ -1,0 +1,54 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+## GET /user/tracks
+
+Get user's saved tracks
+
+:::info
+
+You have to attach a access token in the Authorization in the header
+
+:::
+
+### Request
+
+#### Query Parameters
+
+-   `limit` (integer) - Limit the number of tracks to be returned. Default is 20.
+-   `offset` (integer) - Offset the tracks to be returned. Default is 0.
+
+### Response
+
+<Tabs>
+  	<TabItem value="200" label="200" default>
+        User's saved tracks found.
+
+        ```js
+        {
+            "status": "ok",
+            "savedTracks": [
+                {
+                    "_id": "65f0548b30c87fd7ec0c3d05",
+                    "name": "Comatose",
+                    "album": "65f0514bc5dacae7dec623a0",
+                    "artist": "65f05058d40a99dc32c42b9c",
+                    "audioFile": "fd2e51d5-69ce-4bcd-8fff-8a37f50e8188.mp3",
+                    "__v": 0
+                }
+            ]
+        }
+        ```
+    </TabItem>
+    <TabItem value="400" label="400">
+        No saved tracks found.
+
+        ```js
+        {
+            "status": "error",
+            "message": "No saved tracks found"
+        }
+        ```
+    </TabItem>
+
+</Tabs>

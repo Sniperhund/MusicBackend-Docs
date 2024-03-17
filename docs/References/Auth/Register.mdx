@@ -23,3 +23,34 @@ In the email a link goes to `frontendUrl`?q=token
 Where you have to call the `GET /auth/verify` endpoint with the verify token in the q parameter
 
 :::
+
+### Response
+
+<Tabs>
+  	<TabItem value="200" label="200" default>
+        User registered successfully
+    </TabItem>
+    <TabItem value="400" label="400">
+        Bad request
+
+        You can show the message in the response on the frontend to the user
+
+        ```js
+        {
+            "status": "error",
+            "message": "This email is already in use"
+        }
+        ```
+    </TabItem>
+    <TabItem value="422" label="422">
+        Unprocessable entity
+
+        ```js
+        {
+            "status": "error",
+            "message": "One or more fields are missing"
+        }
+        ```
+    </TabItem>
+
+</Tabs>

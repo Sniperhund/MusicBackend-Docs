@@ -9,7 +9,7 @@ Verify a user
 
 #### Query Parameters
 
--   `q` (string, required) - The verify token
+-   `q` (string, required) - The verification code
 
 ### Response
 
@@ -24,6 +24,18 @@ Verify a user
         "refreshToken": "a1814d8e-e5e1-49c1-9bd3-201adf477f34",
     }
     ```
+    </TabItem>
+    <TabItem value="400" label="400">
+        Bad request
+
+        You can show the message in the response on the frontend to the user
+
+        ```js
+        {
+            "status": "error",
+            "message": "This email is already in use"
+        }
+        ```
     </TabItem>
 
 </Tabs>
