@@ -1,0 +1,44 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+## GET /user/albums/contains
+
+Check if a album is saved by the current user.
+
+:::info
+
+You have to attach a access token in the Authorization in the header
+
+:::
+
+### Request
+
+#### Query Parameters
+
+-   `id` (mongodb id) - The id of the track.
+
+### Response
+
+<Tabs>
+  	<TabItem value="200" label="200" default>
+        User's saved albums found.
+
+        ```js
+        {
+            "status": "ok",
+            "contains": "true",
+        }
+        ```
+    </TabItem>
+    <TabItem value="400" label="400">
+        No saved albums found.
+
+        ```js
+        {
+            "status": "error",
+            "message": "No saved tracks found"
+        }
+        ```
+    </TabItem>
+
+</Tabs>

@@ -1,9 +1,9 @@
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-## GET /tracks
+## GET /albums
 
-Get multiple track by its IDs.
+Get multiple albums by its IDs.
 
 :::info
 
@@ -15,33 +15,26 @@ You have to attach a access token in the Authorization in the header
 
 #### Query Parameters
 
--   `ids` (array of strings, required) - The IDs of the tracks.
+-   `ids` (array of strings, required) - The IDs of the albums.
 
 ### Response
 
 <Tabs>
   	<TabItem value="200" label="200" default>
-    Tracks found.
+    Albums found.
 
     ```js
     [
         {
-            "_id": "65f0548b30c87fd7ec0c3d05",
-            "name": "Comatose",
-            "album": {
-                "_id": "65f0514bc5dacae7dec623a0",
-                "name": "Comatose - Single",
-                "artist": "65f05058d40a99dc32c42b9c",
-                "cover": "8b6aceec-b398-488f-bb03-088c9b46db4a.jpg",
-                "__v": 0
-            },
+            "_id": "65f0514bc5dacae7dec623a0",
+            "name": "Comatose - Single",
             "artist": {
                 "_id": "65f05058d40a99dc32c42b9c",
                 "name": "Rxseboy",
                 "cover": "eb488ec6-ca15-431e-83b6-e3b4c62290ae.jpg",
                 "__v": 0
             },
-            "audioFile": "fd2e51d5-69ce-4bcd-8fff-8a37f50e8188.mp3",
+            "cover": "8b6aceec-b398-488f-bb03-088c9b46db4a.jpg",
             "__v": 0
         }
     ]
