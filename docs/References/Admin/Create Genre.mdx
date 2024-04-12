@@ -1,9 +1,9 @@
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-## POST /admin/album
+## POST /admin/genre
 
-Create Album.
+Create Genre.
 
 :::info
 
@@ -15,20 +15,17 @@ You have to attach a access token in the Authorization in the header and have th
 
 #### Body
 
--   `name` (string, required): The name of the album.
--   `artist` (mongodb id, required): The artist that the album belongs to.
--   `file` (file, required): The album cover image file.
--   `genre` (mongodb id, required): The genre that the album belongs to.
+-   `name` (string, required): The name of the genre.
 
 ### Response
 
 <Tabs>
     <TabItem value="200" label="200" default>
-        Album created successfully.
+        Genre created successfully.
     </TabItem>
     <TabItem value="401" label="401">
         Bad or expired token. The user needs to be authenticated and have
-        permission to add albums.
+        permission to add genres.
     </TabItem>
     <TabItem value="422" label="422">
         The request body is missing or has invalid fields.
