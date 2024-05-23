@@ -1,7 +1,7 @@
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-## GET /tracks/random
+## GET /tracks/:id/random
 
 Get random tracks by the genre
 
@@ -21,7 +21,6 @@ Due to a bug (that's being fixed) the genre query parameter is ignored and will 
 
 #### Query Parameters
 
--   `genre` (mongodb id, required) - The genre you want the tracks to get selected from.
 -   `limit` (integer, required) - The amount of tracks.
 
 ### Response
