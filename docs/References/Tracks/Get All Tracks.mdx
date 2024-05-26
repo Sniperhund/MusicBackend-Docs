@@ -1,0 +1,52 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+## GET /all/tracks
+
+Get all tracks.
+
+:::info
+
+You have to attach a access token in the Authorization in the header
+
+:::
+
+### Response
+
+<Tabs>
+  	<TabItem value="200" label="200" default>
+    Tracks found.
+
+    ```js
+    [
+        {
+            "_id": "65f0548b30c87fd7ec0c3d05",
+            "name": "Comatose",
+            "album": {
+                "_id": "65f0514bc5dacae7dec623a0",
+                "name": "Comatose - Single",
+                "artist": "65f05058d40a99dc32c42b9c",
+                "cover": "8b6aceec-b398-488f-bb03-088c9b46db4a.jpg",
+                "__v": 0
+            },
+            "artist": {
+                "_id": "65f05058d40a99dc32c42b9c",
+                "name": "Rxseboy",
+                "cover": "eb488ec6-ca15-431e-83b6-e3b4c62290ae.jpg",
+                "__v": 0
+            },
+            "audioFile": "fd2e51d5-69ce-4bcd-8fff-8a37f50e8188.mp3",
+            "__v": 0
+        }
+    ]
+    ```
+
+</TabItem>
+<TabItem value="401" label="401">
+Bad or expired token. The user needs to be authenticated.
+</TabItem>
+<TabItem value="429" label="429">
+The user has sent too many requests in a given amount of time.
+</TabItem>
+
+</Tabs>

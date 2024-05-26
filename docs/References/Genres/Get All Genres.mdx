@@ -1,0 +1,43 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+## GET /all/genres
+
+Get all genres.
+
+:::info
+
+You have to attach a access token in the Authorization in the header
+
+:::
+
+### Response
+
+<Tabs>
+  	<TabItem value="200" label="200" default>
+    Genres found.
+
+    ```js
+    [
+        {
+            "_id": "661526720e969775ec12bc14",
+            "name": "Alternative",
+            "__v": 0
+        },
+        {
+            "_id": "661529a9244a8e27afc4a446",
+            "name": "Pop",
+            "__v": 0
+        }
+    ]
+    ```
+
+</TabItem>
+<TabItem value="401" label="401">
+Bad or expired token. The user needs to be authenticated.
+</TabItem>
+<TabItem value="429" label="429">
+The user has sent too many requests in a given amount of time.
+</TabItem>
+
+</Tabs>

@@ -1,0 +1,39 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+## GET /all/artists
+
+Get all artists.
+
+:::info
+
+You have to attach a access token in the Authorization in the header
+
+:::
+
+### Response
+
+<Tabs>
+  	<TabItem value="200" label="200" default>
+    Artists found.
+
+    ```js
+    [
+        {
+            "_id": "65f05058d40a99dc32c42b9c",
+            "name": "Rxseboy",
+            "cover": "eb488ec6-ca15-431e-83b6-e3b4c62290ae.jpg",
+            "__v": 0
+        }
+    ]
+    ```
+
+</TabItem>
+<TabItem value="401" label="401">
+Bad or expired token. The user needs to be authenticated.
+</TabItem>
+<TabItem value="429" label="429">
+The user has sent too many requests in a given amount of time.
+</TabItem>
+
+</Tabs>

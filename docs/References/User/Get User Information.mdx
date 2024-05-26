@@ -1,0 +1,49 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+## GET /user
+
+Get the information on the current user (excluding tokens)
+
+:::info
+
+You have to attach a access token in the Authorization in the header
+
+:::
+
+### Response
+
+<Tabs>
+  	<TabItem value="200" label="200" default>
+        User information found.
+
+        ```js
+        {
+            "_id": "6611afdf26ddc1d8ad0ed8c5",
+            "name": "Lucas Täkker",
+            "email": "lucastakker@gmail.com",
+            "role": "user",
+            "verified": true,
+            "savedTracks": [],
+            "createdAt": "2024-04-06T20:26:07.670Z",
+            "__v": 0
+        }
+        ```
+    </TabItem>
+    <TabItem value="400" label="400">
+        Bad request
+
+        You can show the message in the response on the frontend to the user
+
+        ```js
+        {
+            "status": "error",
+            "message": "Wrong password"
+        }
+        ```
+    </TabItem>
+    <TabItem value="401" label="401">
+        Bad or expired token. The user needs to be authenticated.
+    </TabItem>
+
+</Tabs>
