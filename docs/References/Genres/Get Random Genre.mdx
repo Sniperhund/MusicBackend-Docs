@@ -1,0 +1,39 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+## GET /genres/random
+
+Get a random genre.
+
+:::info
+
+You have to attach an access token in the Authorization header.
+
+:::
+
+### Response
+
+<Tabs>
+  	<TabItem value="200" label="200" default>
+    Genre found.
+
+    ```js
+    {
+        "_id": "65f0548b30c87fd7ec0c3d05",
+        "name": "Rock",
+        "__v": 0
+    }
+    ```
+
+    </TabItem>
+    <TabItem value="401" label="401">
+    Bad or expired token. The user needs to be authenticated.
+    </TabItem>
+    <TabItem value="404" label="404">
+    No genres found.
+    </TabItem>
+    <TabItem value="429" label="429">
+    The user has sent too many requests in a given amount of time.
+    </TabItem>
+
+</Tabs>
