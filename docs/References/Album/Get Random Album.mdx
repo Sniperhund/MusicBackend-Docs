@@ -1,0 +1,66 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+## GET /albums/genre/:id/random
+
+Get random albums by genre.
+
+:::info
+
+You have to attach an access token in the Authorization header.
+
+:::
+
+### Request
+
+#### Path Parameters
+
+-   `id` (string, required) - The ID of the genre to filter albums.
+
+#### Query Parameters
+
+-   `limit` (integer, optional) - The number of albums to retrieve. Default is 10.
+
+### Response
+
+<Tabs>
+  	<TabItem value="200" label="200" default>
+    Albums found.
+
+    ```js
+    [
+        {
+            "_id": "65f0548b30c87fd7ec0c3d05",
+            "name": "Album 1",
+            "artist": "65f05058d40a99dc32c42b9c",
+            "cover": "album1-cover.jpg",
+            "genres": ["65f0548b30c87fd7ec0c3d01"],
+            "__v": 0
+        },
+        {
+            "_id": "65f0548b30c87fd7ec0c3d06",
+            "name": "Album 2",
+            "artist": "65f05058d40a99dc32c42b9d",
+            "cover": "album2-cover.jpg",
+            "genres": ["65f0548b30c87fd7ec0c3d02"],
+            "__v": 0
+        }
+        // More albums...
+    ]
+    ```
+
+    </TabItem>
+    <TabItem value="401" label="401">
+    Bad or expired token. The user needs to be authenticated.
+    </TabItem>
+    <TabItem value="422" label="422">
+    Invalid limit or genre ID value.
+    </TabItem>
+    <TabItem value="404" label="404">
+    No albums found.
+    </TabItem>
+    <TabItem value="429" label="429">
+    The user has sent too many requests in a given amount of time.
+    </TabItem>
+
+</Tabs>
