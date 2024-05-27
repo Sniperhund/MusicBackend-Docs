@@ -3,7 +3,7 @@ import TabItem from "@theme/TabItem";
 
 ## GET /genres/random
 
-Get a random genre.
+Get random genres.
 
 :::info
 
@@ -15,25 +15,36 @@ You have to attach an access token in the Authorization header.
 
 #### Query Parameters
 
--   `exclude` (string, optional) - A comma-separated list of genre IDs to exclude from the random selection.
+-   `limit` (integer, optional) - The number of genres to retrieve. Default is 10.
 
 ### Response
 
 <Tabs>
   	<TabItem value="200" label="200" default>
-    Genre found.
+    Genres found.
 
     ```js
-    {
-        "_id": "65f0548b30c87fd7ec0c3d05",
-        "name": "Rock",
-        "__v": 0
-    }
+    [
+        {
+            "_id": "65f0548b30c87fd7ec0c3d05",
+            "name": "Rock",
+            "__v": 0
+        },
+        {
+            "_id": "65f0548b30c87fd7ec0c3d06",
+            "name": "Pop",
+            "__v": 0
+        }
+        // More genres...
+    ]
     ```
 
     </TabItem>
     <TabItem value="401" label="401">
     Bad or expired token. The user needs to be authenticated.
+    </TabItem>
+    <TabItem value="422" label="422">
+    Invalid limit value.
     </TabItem>
     <TabItem value="404" label="404">
     No genres found.
